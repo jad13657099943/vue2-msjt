@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', miui, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+}
+
+input {
+    outline: medium;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.box {
+    box-sizing: border-box;
+    padding: 0.4rem;
+}
+
+.width {
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.xian {
+    width: 100%;
+    background: rgb(238, 238, 238);
+    height: 0.01rem;
+}
+
+.margin_top {
+    margin-top: 0.2rem;
+}
+
+.font-size {
+    font-size: 0.4rem;
+}
+
+.red {
+    color: red;
+}
