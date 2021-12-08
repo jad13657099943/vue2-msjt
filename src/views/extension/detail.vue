@@ -4,7 +4,7 @@
     <div class="header_box">
       <div class="title">当前收益</div>
       <div class='balance'>{{$common.keepTwo(list.balance,2)}}</div>
-      <div class='withdraw'>立即提现</div>
+      <div class='withdraw' @click="$project.toPath('/my/extension/withdraw')">立即提现</div>
       <div class='money_box'>
        <div>
            <div>全部收益</div>

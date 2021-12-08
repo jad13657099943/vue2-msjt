@@ -99,3 +99,5 @@ export const AgencyBalance=(params)=>get('agency/balance',params);
 export const AgencyOrder=(params)=>get('agency/order',params);
 //邀请码图片
 export const AdcateList=()=>get('adcate/list');
+//提现
+export const AgencyWithdraw=(params)=>post('agency/withdraw',params);

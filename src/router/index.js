@@ -144,6 +144,10 @@ const routes = [
       component:()=>import('../views/extension/url.vue')
     },
     {
+      path:'/my/extension/withdraw',
+      component:()=>import('../views/extension/withdraw.vue')
+    },
+    {
        path:'/cur/order',
        component:()=>import('../views/my/curOrder.vue')
     },

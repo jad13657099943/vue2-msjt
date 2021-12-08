@@ -44,7 +44,7 @@ export default {
     },
     //截取小数点后两位
     keepTwo(val,length){
-      val=val.toString();
+      val+="";
      return val.substring(0,val.indexOf('.')+(length+1))
     }
   }
