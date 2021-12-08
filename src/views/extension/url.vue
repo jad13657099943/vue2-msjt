@@ -2,8 +2,9 @@
   <div>
     <back title="推广名片"></back>
     <div class="url_box">
-      <div class="qr_box">
-        <img :src="$imgUrl + list.image" />
+      <img class='qr_img' :src='img' v-if='!show'>
+      <div class="qr_box" ref='qr' v-if="show">
+        <img class='img' :src="$imgUrl + list.image" />
         <div class="bottom">
           <div id="qrCode" ref="qrCodeDiv"></div>
           <div class="title_box">
@@ -12,7 +13,8 @@
           </div>
         </div>
       </div>
-        <div class='url_bottom_box' @click="getHtml()">
+    
+        <div class='url_bottom_box' >
         <div class='icon'></div>
         <div class='url_title'>长按保存图片</div>
         <div class='icon'></div>
@@ -33,13 +35,18 @@ export default {
   },
   data() {
     return {
+      show:true,
       list: [],
       user: [],
+      img:''
     };
   },
   mounted() {
     this.$nextTick(() => {
       this.getQRCode();
+      setTimeout(()=>{
+          this.getHtml();
+      },200)
     });
   },
   methods: {
@@ -55,14 +62,12 @@ export default {
     },
     getHtml() {
         
-      html2canvas(this.$refs.qrCodeDiv, {
-        backgroundColor: null,
-        width: 200,
-        height: 200,
+      html2canvas(this.$refs.qr, {
+    
       }).then((canvas) => {
-console.log( canvas)
-        var imgData = canvas.toDataURL("image/jpeg");
-        this.imgData = imgData;
+        var imgData = canvas.toDataURL("image/jpg");
+        this.img = imgData;
+        this.show=false;
       });
     },
   },
@@ -84,12 +89,16 @@ console.log( canvas)
   background: #ccc;
   box-sizing: border-box;
   padding: 0.8rem 0.8rem 0 0.8rem;
-
+  .qr_img{
+    width: 100%;
+    height: 12.2rem;
+    border-radius: 0.15rem;
+  } 
   .qr_box {
     background: white;
     border-radius: 0.15rem;
   }
-  img {
+  .img {
     width: 100%;
     height: 9rem;
     border-radius: 0.15rem;
