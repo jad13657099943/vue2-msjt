@@ -251,15 +251,16 @@ export default {
 .order_info_button_box {
   width: 100%;
   display: flex;
-
   height: 1.85rem;
   box-sizing: border-box;
   padding: 0.8rem 0 0.4rem 0;
   justify-content: flex-end;
 }
 .order_info_button {
+  height: 0.7rem;
+  line-height: 0.7rem;
   border: 0.01rem solid black;
-  padding: 0.05rem 0.2rem;
+  padding: 0 0.2rem;
   border-radius: 0.3rem;
   margin-right: 0.4rem;
 }
