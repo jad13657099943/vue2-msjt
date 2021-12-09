@@ -3,7 +3,7 @@
     <back title="推广名片"></back>
     <div class="url_box">
       <!--  <canvas id="can_img"></canvas> -->
-      <img class="qr_img" :src="img" v-show="!show" />
+      <img class="qr_img" ref="qrImg" :src="img" />
       <div class="qr_box" ref="qr" v-show="show">
         <img
           crossorigin="anonymous"
@@ -81,6 +81,7 @@ export default {
         var imgData = canvas.toDataURL("image/png");
         this.img = imgData;
         this.show = false;
+        this.$refs.qrImg.style.opacity = 1
       });
     },
     getBase64() {
@@ -116,12 +117,14 @@ export default {
   box-sizing: border-box;
   padding: 0.8rem 0.8rem 0 0.8rem;
   .qr_img {
+    transition: all 1.5s;
+    opacity: 0;
     width: 100%;
-   
     border-radius: 0.15rem;
   }
   .qr_box {
     background: white;
+    transform: translate(-999px,-999px);
     border-radius: 0.15rem;
     #can_img {
       width: 100%;
