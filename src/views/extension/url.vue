@@ -3,7 +3,7 @@
     <back title="推广名片"></back>
     <div class="url_box">
       <!--  <canvas id="can_img"></canvas> -->
-      <img class="qr_img" :src="img" v-if="!show" />
+      <img class="qr_img" :src="img" v-show="!show" />
       <div class="qr_box" ref="qr" v-show="show">
         <img
           crossorigin="anonymous"
